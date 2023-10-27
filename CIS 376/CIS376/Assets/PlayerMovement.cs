@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(movementSpeed * touchingLeftorRight, jumpForce);
 
         }
-
+        
     }
     private void FixedUpdate()
     {
