@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool Walljumping;
     private float touchingLeftorRight = 1;
+    public CoinManager c;
 
 
     // public Animator anim;
@@ -85,6 +86,12 @@ public class PlayerMovement : MonoBehaviour
         {
             movementSpeed -= 0.5f;
             Debug.Log("Fornite");
+        }
+
+        if (other.gameObject.CompareTag("collectible"))
+        {
+           Destroy(other.gameObject);
+            c.count++;
         }
     }
 
