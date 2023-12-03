@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro; 
 public class CoinManager : MonoBehaviour
 {
     public int count;
-    public Text Ctext;
+    public TMP_Text Ctext;
     // Start is called before the first frame update
     void Start()
     {

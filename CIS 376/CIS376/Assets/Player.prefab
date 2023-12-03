@@ -60,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 463237687712103351}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.46, y: 0.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.8586829, y: 1.4497751, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 463237685803612909}
@@ -131,14 +131,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18487bb0ccd219443b580fe1ee50f0f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  movementSpeed: 5
   rb: {fileID: 463237687712103345}
-  jumpForce: 8
+  jumpForce: 5
   extraJump: 2
   feet: {fileID: 463237685803612909}
   groundLayers:
     serializedVersion: 2
     m_Bits: 64
+  c: {fileID: 0}
+  deathMenuUI: {fileID: 0}
 --- !u!50 &463237687712103345
 Rigidbody2D:
   serializedVersion: 4
@@ -173,6 +175,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
+  m_Offset: {x: -0.031580526, y: -0.08097499}
+  m_Size: {x: 0.5378188, y: 0.68951005}
   m_Direction: 0

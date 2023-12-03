@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private float touchingLeftorRight = 1;
     public CoinManager c;
 
-
+    public GameObject deathMenuUI;
     // public Animator anim;
 
     private void Update()
@@ -82,11 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Arrow"))
-        {
-            movementSpeed -= 0.5f;
-            Debug.Log("Fornite");
-        }
+        
 
         if (other.gameObject.CompareTag("collectible"))
         {
@@ -94,5 +91,17 @@ public class PlayerMovement : MonoBehaviour
             c.count++;
         }
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("GameBound"))
+        {
+            GameOver();
+            Debug.Log("Fornite");
+        }
+    }
+    private void GameOver()
+    {
+        deathMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+    }
 }
