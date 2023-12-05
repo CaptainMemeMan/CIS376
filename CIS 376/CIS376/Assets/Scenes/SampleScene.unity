@@ -65196,6 +65196,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1218924812}
     - target: {fileID: 463237687712103346, guid: 414fa5d6e9d1b5748a5056a0839ceedd, type: 3}
+      propertyPath: jumpForce
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 463237687712103346, guid: 414fa5d6e9d1b5748a5056a0839ceedd, type: 3}
       propertyPath: deathMenuUI
       value: 
       objectReference: {fileID: 1245937735}
