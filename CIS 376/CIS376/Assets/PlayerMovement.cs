@@ -26,10 +26,12 @@ public class PlayerMovement : MonoBehaviour
     public Animator anim;
     public float run = 40f;
     float horizontal = 0f;
+    private bool facing = true;
 
     private void Update()
     {
         mx = Input.GetAxisRaw("Horizontal");
+        switchFace();
         if (Input.GetButton("Jump") && IsGrounded())
         {
             Jump(); //calls the jump function  
@@ -108,5 +110,16 @@ public class PlayerMovement : MonoBehaviour
     {
         deathMenuUI.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    private void switchFace()
+    {
+        if(facing && horizontal < 0f || !facing && horizontal > 0f)
+        {
+            facing = !facing;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1f;
+            transform.localScale = localScale;
+        }
     }
 }

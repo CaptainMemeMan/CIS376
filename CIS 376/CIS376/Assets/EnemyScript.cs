@@ -10,6 +10,9 @@ public class EnemyScript : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool isFacingRight = true;
+    public Animator anim;
+    public float run = 40f;
+    float horizontal = 0f;
 
     void Start()
     {
@@ -28,6 +31,10 @@ public class EnemyScript : MonoBehaviour
         {
             Flip();
         }
+
+        horizontal = Input.GetAxisRaw("horizontal") * run;
+        anim.SetFloat("speed", Mathf.Abs(horizontal));
+
     }
 
     // Function to flip the enemy's direction

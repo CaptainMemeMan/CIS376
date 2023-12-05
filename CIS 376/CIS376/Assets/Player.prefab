@@ -141,6 +141,8 @@ MonoBehaviour:
     m_Bits: 64
   c: {fileID: 0}
   deathMenuUI: {fileID: 0}
+  anim: {fileID: 0}
+  run: 40
 --- !u!50 &463237687712103345
 Rigidbody2D:
   serializedVersion: 4
