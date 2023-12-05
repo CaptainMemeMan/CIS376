@@ -23,7 +23,9 @@ public class PlayerMovement : MonoBehaviour
     public CoinManager c;
 
     public GameObject deathMenuUI;
-    // public Animator anim;
+    public Animator anim;
+    public float run = 40f;
+    float horizontal = 0f;
 
     private void Update()
     {
@@ -44,7 +46,10 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector2(movementSpeed * touchingLeftorRight, jumpForce);
 
         }
-        
+
+
+        horizontal = Input.GetAxisRaw("Horizontal") * run;
+        anim.SetFloat("speed", Mathf.Abs(horizontal));
     }
     private void FixedUpdate()
     {
